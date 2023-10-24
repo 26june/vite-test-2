@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Header {
+  height: 10vh;
+  width: 100vw;
+  background-color: lightblue;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Gallery {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.HornedBeast {
+  height: 20vw;
+  width: 20vw;
+  aspect-ratio: 1/1;
+  border: 1px solid red;
+}
+
+.HornedBeast img {
+  height: 200px;
+  aspect-ratio: 1/1;
+}
