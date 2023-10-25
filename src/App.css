@@ -26,6 +26,33 @@
   width: 100vw;
   gap: 16px;
   flex-wrap: wrap;
+  position: relative;
+}
+
+.Modal {
+  position: absolute;
+}
+
+.Modal-Content {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  flex-direction: column;
+  gap: 24px;
+  color: white;
+}
+
+.Modal-Content img {
+  height: 50vh;
+  width: 50vh;
 }
 
 .HornedBeast {

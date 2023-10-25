@@ -1,12 +1,19 @@
 import React from "react";
-import myData from "../myData";
 import HornedBeast from "./HornedBeast";
 
-export default function () {
+export default function ({ myData, setSelectedBeast, setIsModalShowing }) {
   return (
     <div className="Gallery">
-      {myData.map((e) => {
-        return <HornedBeast key={e._id} myData={e}></HornedBeast>;
+      {myData.map((e, index) => {
+        return (
+          <HornedBeast
+            key={e._id}
+            myData={e}
+            index={index}
+            setSelectedBeast={setSelectedBeast}
+            setIsModalShowing={setIsModalShowing}
+          ></HornedBeast>
+        );
       })}
     </div>
   );
