@@ -9,17 +9,28 @@ function App() {
   const [selectedBeast, setSelectedBeast] = useState(0);
   const [isModalShowing, setIsModalShowing] = useState(false);
 
+  const [currentSearch, setCurrentSearch] = useState("");
+
+  let currentData = myData;
+
+  if (currentSearch !== "") {
+    currentData = myData.filter((item) => item.keyword.match(currentSearch));
+  }
+
   return (
     <div className="App">
-      <Header></Header>
+      <Header
+        currentSearch={currentSearch}
+        setCurrentSearch={setCurrentSearch}
+      ></Header>
       <Gallery
-        myData={myData}
+        myData={currentData}
         setSelectedBeast={setSelectedBeast}
         setIsModalShowing={setIsModalShowing}
       ></Gallery>
       {isModalShowing ? (
         <Modal
-          currentBeast={myData[selectedBeast]}
+          currentBeast={currentData[selectedBeast]}
           setIsModalShowing={setIsModalShowing}
         ></Modal>
       ) : null}
