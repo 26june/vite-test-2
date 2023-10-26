@@ -21,7 +21,6 @@ function App() {
   }
 
   if (currentSelect !== "all") {
-    console.log(currentSelect);
     currentData = currentData.filter((item) => item.horns === +currentSelect);
   }
 
