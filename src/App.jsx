@@ -10,6 +10,7 @@ function App() {
   const [isModalShowing, setIsModalShowing] = useState(false);
 
   const [currentSearch, setCurrentSearch] = useState("");
+  const [currentSelect, setCurrentSelect] = useState("all");
 
   let currentData = myData;
 
@@ -17,11 +18,17 @@ function App() {
     currentData = myData.filter((item) => item.keyword.match(currentSearch));
   }
 
+  if (currentSelect !== "all") {
+    console.log(currentSelect);
+    currentData = myData.filter((item) => item.horns === +currentSelect);
+  }
+
   return (
     <div className="App">
       <Header
         currentSearch={currentSearch}
         setCurrentSearch={setCurrentSearch}
+        setCurrentSelect={setCurrentSelect}
       ></Header>
       <Gallery
         myData={currentData}
