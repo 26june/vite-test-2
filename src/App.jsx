@@ -15,12 +15,14 @@ function App() {
   let currentData = myData;
 
   if (currentSearch !== "") {
-    currentData = myData.filter((item) => item.keyword.match(currentSearch));
+    currentData = currentData.filter((item) =>
+      item.keyword.match(currentSearch)
+    );
   }
 
   if (currentSelect !== "all") {
     console.log(currentSelect);
-    currentData = myData.filter((item) => item.horns === +currentSelect);
+    currentData = currentData.filter((item) => item.horns === +currentSelect);
   }
 
   return (
